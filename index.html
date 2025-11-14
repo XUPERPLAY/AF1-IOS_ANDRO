@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AF1 ANDROID-IOS</title>
+  <style>
+    :root{--rojo-neon:#ff004c}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      font-family:'Segoe UI',sans-serif;
+      background:#0f0f0f;
+      color:#fff;
+      overflow:hidden;
+    }
+    /* ----------  HEADER mini  ---------- */
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:#111;
+      border-bottom:1px solid var(--rojo-neon);
+      padding:10px 15px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    header img{height:32px}
+    header h1{font-size:20px;color:var(--rojo-neon)}
+    /* ----------  BUSCADOR mini  ---------- */
+    .search-box{
+      position:sticky;
+      top:53px;
+      z-index:10;
+      background:#0f0f0f;
+      padding:8px 15px;
+      display:flex;
+      justify-content:center;
+    }
+    .search-box input{
+      width:90%;
+      max-width:320px;
+      padding:8px 16px;
+      font-size:14px;
+      border-radius:20px;
+      border:none;
+      outline:none;
+      background:#1a1a1a;
+      color:#fff;
+      box-shadow:0 0 8px var(--rojo-neon), inset 0 0 4px var(--rojo-neon);
+    }
+    /* ----------  SCROLL + GRID 2 COLS  ---------- */
+    .scroll-area{
+      flex:1;
+      overflow-y:auto;
+      padding:12px;
+    }
+    .container{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);   /* 2 columnas fijas */
+      gap:12px;
+    }
+    /* ----------  CARD mini  ---------- */
+    .channel-card{
+      background:#1a1a1a;
+      border-radius:8px;
+      overflow:hidden;
+      transition:transform .2s;
+      text-align:center;
+      box-shadow:0 0 6px rgba(255,0,85,.25);
+    }
+    .channel-card:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 12px rgba(255,0,85,.5);
+    }
+    .channel-card img{
+      width:100%;
+      height:70px;              /* logo más pequeño */
+      object-fit:contain;
+      background:#000;
+      padding:4px;
+    }
+    .channel-card h3{
+      font-size:11px;
+      margin:6px 0 3px;
+      color:#fff;
+    }
+    .channel-card p{
+      font-size:9px;
+      color:#aaa;
+      margin-bottom:6px;
+    }
+    .channel-card a{
+      display:inline-block;
+      margin-bottom:8px;
+      padding:5px 10px;
+      background:var(--rojo-neon);
+      color:#fff;
+      text-decoration:none;
+      border-radius:4px;
+      font-size:11px;
+      font-weight:bold;
+    }
+    .channel-card a:hover{background:#fff;color:#000}
+    .hidden{display:none}
+
+    /* pantallas grandes: más columnas si quieres */
+    @media (min-width:600px){.container{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER mini -->
+  <header>
+    <img src="https://i.postimg.cc/L4xpnNy5/logo11-3-19385.png" alt="Logo AF1 ANDRO-IOS">
+    <h1>AF1 ANDRO-IOS-*10.seg de carga*</h1>
+  </header>
+
+  <!-- BUSCADOR mini -->
+  <div class="search-box">
+    <input type="text" id="buscador" placeholder="Buscar canal, grupo o logo...">
+  </div>
+
+  <!-- SCROLL + TARJETAS -->
+  <div class="scroll-area">
+    <div class="container" id="container">
+    <!-- AMC HD -->
+    <div class="channel-card">
+      <img src="https://github.com/davidmuma/picons_dobleM/blob/master/icon/AMC%20HD.png?raw=true" alt="AMC HD">
+      <h3>AMC HD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/55ff9ee631af351f365f51cf3601695bf1fd20f3/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- BeMad HD -->
+    <div class="channel-card">
+      <img src="https://github.com/davidmuma/picons_dobleM/blob/master/icon/Be%20Mad%20HD.png?raw=true" alt="BeMad HD">
+      <h3>BeMad FHD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/6e1b5fd8753352486aa932f802534a17556e1f60/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- Canal Cocina -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/davidmuma/picons_dobleM/master/icon/Canal%20Cocina.png" alt="Canal Cocina">
+      <h3>CANAL COCINA FHD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/96f092e1fa99062f6da14cae230b877ad3ed849b/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+    <!-- Caza y Pesca HD -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/davidmuma/picons_dobleM/master/icon/Caza%20y%20Pesca%20HD.png" alt="Caza y Pesca HD">
+      <h3>CAZA Y PESCA FHD HD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/8b9e46eb3a9b4ef23b7d3d86c73a0851580f8caa/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- Caza y Pesca HD (III) -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/davidmuma/picons_dobleM/master/icon/Caza%20y%20Pesca%20HD.png" alt="Caza y Pesca HD">
+      <h3>CAZA Y PESCA FHD HD III</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/277a6fb47189db801c5b7b05ad89c690571f3e9c/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- Dark HD -->
+    <div class="channel-card">
+      <img src="https://github.com/davidmuma/picons_dobleM/blob/master/icon/DARK.png?raw=true" alt="Dark HD">
+      <h3>DARK HD III</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/25465ea2deba65c623b7659136abf6fcc9f5dc20/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+    <!-- Discovery Channel HD -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/davidmuma/picons_dobleM/master/icon/Discovery.png" alt="Discovery Channel">
+      <h3>DISCOVERY CHANNEL HD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/670519ffe8db1e20d0c753d4f756c009e71173d8/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- Movistar Acción FHD -->
+    <div class="channel-card">
+      <img src="https://github.com/davidmuma/picons_dobleM/blob/master/icon/M+%20Acci%C3%B3n%20HD.png?raw=true" alt="M+ Acción HD">
+      <h3>MOVISTAR ACCION FHD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/102bcb79ca391e37ac1fc9ee77dc53440d0a59ce/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- Movistar Acción FHD VI -->
+    <div class="channel-card">
+      <img src="https://github.com/davidmuma/picons_dobleM/blob/master/icon/M+%20Acci%C3%B3n%20HD.png?raw=true" alt="M+ Acción HD">
+      <h3>MOVISTAR ACCION FHD VI</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/089673779de9fa7a18ac8dc26eb4a79cf5a86f96/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+    <!-- M+ Cine Español -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/davidmuma/picons_dobleM/refs/heads/master/icon/M%2B%20Cine%20Espa%C3%B1ol%20HD.png" alt="M+ Cine Español">
+      <h3>MOVISTAR CINE ESPAÑOL FHD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/e4bce95dd4faeb9cb09ade36a0636bc4b22b691c/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- M+ Clásicos FHD -->
+    <div class="channel-card">
+      <img src="https://i.ibb.co/JWpf4FcM/clasicos.png" alt="M+ Clásicos HD">
+      <h3>MOVISTAR CLASICOS FHD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/cf6ffdfa3c51268c0bd216da6b275fb866160c0c/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- M+ Clásicos FHD VI -->
+    <div class="channel-card">
+      <img src="https://i.ibb.co/JWpf4FcM/clasicos.png" alt="M+ Clásicos HD">
+      <h3>MOVISTAR CLASICOS FHD VI</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/6462c8f65fcaa6e4fc874fef8d1e45bb7a7e6bae/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- M+ Comedia FHD -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/spain/comedia-por-movistar-plus-es.png" alt="M+ Comedia HD">
+      <h3>MOVISTAR COMEDIA FHD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/cf0cb321eed6765c2eadbd9983570f6674ce5df6/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- M+ Estrenos FHD -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/davidmuma/picons_dobleM/refs/heads/master/icon/M%2B%20Estrenos%20HD.png" alt="M+ Estrenos HD">
+      <h3>MOVISTAR ESTRENOS FHD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/192f2ac5b372dfddef694e48edd2d56e308b51e7/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- M+ Estrenos FHD VI -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/davidmuma/picons_dobleM/refs/heads/master/icon/M%2B%20Estrenos%20HD.png" alt="M+ Estrenos HD">
+      <h3>MOVISTAR ESTRENOS FHD VI</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/5d35f906b735f25164fa2b9b7a4e6ef91dfed131/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+    <!-- M+ Festival San Sebastián -->
+    <div class="channel-card">
+      <img src="https://i.blogs.es/609ad9/blob/original.jpeg" alt="M+ Festival">
+      <h3>MOVISTAR FESTIVAL SAN SEBASTIAN FHD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/cf99e99c105162410ec6d1f68cc6f4811560fee7/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- M+ Hits FHD -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/davidmuma/picons_dobleM/refs/heads/master/icon/M%2B%20Hits.png" alt="M+ Hits HD">
+      <h3>MOVISTAR HITS FHD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/50553edb5e8c54d15e0d43161369b3b4cef95065/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- M+ Indie FHD -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/davidmuma/picons_dobleM/refs/heads/master/icon/M%2B%20Indie%20HD.png" alt="M+ Indie HD">
+      <h3>MOVISTAR INDIE FHD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/7716c9fd5bd4413715e4e26f97efb91802f6ee80/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- M+ Originales FHD -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/davidmuma/picons_dobleM/refs/heads/master/icon/M%2B%20Originales%20HD.png" alt="M+ Originales HD">
+      <h3>MOVISTAR ORIGINALES FHD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/096b817fcc836535f608facb15fca6408fae3162/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+    <!-- Movistar Plus+ FHD -->
+    <div class="channel-card">
+      <img src="https://i.ibb.co/hFYPWbpJ/plus.png" alt="Movistar Plus+ HD">
+      <h3>MOVISTAR PLUS FHD</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/8c67cdb5ba81976662c3a67984a9545d9cfb0f70/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- Movistar Plus+ FHD (II) -->
+    <div class="channel-card">
+      <img src="https://i.ibb.co/hFYPWbpJ/plus.png" alt="Movistar Plus+ HD">
+      <h3>MOVISTAR PLUS FHD II</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/b6ffbbc72a5b6b579faf79ebac229af7a25b933b/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- Movistar Plus+ FHD (VI) -->
+    <div class="channel-card">
+      <img src="https://i.ibb.co/hFYPWbpJ/plus.png" alt="Movistar Plus+ HD">
+      <h3>MOVISTAR PLUS FHD VI</h3>
+      <p>MOVISTAR</p>
+      <a href="http://vlc.shickat.me:8000/pid/199190e3f28c1de0be34bccf0d3568dc65209b99/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- DAZN LaLiga 1 FHD -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/spain/dazn-laliga-es.png" alt="DAZN LaLiga HD">
+      <h3>DAZN LA LIGA 1 FHD</h3>
+      <p>LA LIGA</p>
+      <a href="http://vlc.shickat.me:8000/pid/0e50439e68aa2435b38f0563bb2f2e98f32ff4b1/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- DAZN LaLiga 1 FHD (II) -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/spain/dazn-laliga-es.png" alt="DAZN LaLiga HD">
+      <h3>DAZN LA LIGA 1 FHD II</h3>
+      <p>LA LIGA</p>
+      <a href="http://vlc.shickat.me:8000/pid/1bb5bf76fb2018d6db9aaa29b1467ecdfabe2884/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- DAZN LaLiga 1 FHD (ELCANO) -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/spain/dazn-laliga-es.png" alt="DAZN LaLiga HD">
+      <h3>DAZN LA LIGA 1 FHD ELCANO</h3>
+      <p>LA LIGA</p>
+      <a href="http://vlc.shickat.me:8000/pid/e2b8a4aba2f4ea3dd68992fcdb65c9e62d910b05/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+    <!-- M+ LaLiga FHD -->
+    <div class="channel-card">
+      <img src="https://i.ibb.co/yfV1Q8n/liga.png" alt="M+ LaLiga HD">
+      <h3>M+ LALIGA FHD</h3>
+      <p>LA LIGA</p>
+      <a href="http://vlc.shickat.me:8000/pid/d4ff041287a43e3114d411d671c4b4e92e21f31e/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- M+ LaLiga FHD (VI) -->
+    <div class="channel-card">
+      <img src="https://i.ibb.co/yfV1Q8n/liga.png" alt="M+ LaLiga HD">
+      <h3>M+ LALIGA FHD VI</h3>
+      <p>LA LIGA</p>
+      <a href="http://vlc.shickat.me:8000/pid/107c3ce5a5d2527c9f06e4eab87477201791f231/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- M+ Liga de Campeones 4K -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/davidmuma/picons_dobleM/master/icon/M%2B%20Liga%20de%20Campeones.png" alt="Liga de Campeones">
+      <h3>LIGA DE CAMPEONES 4K</h3>
+      <p>LIGA DE CAMPEONES</p>
+      <a href="http://vlc.shickat.me:8000/pid/678a1e93fbfbd499c329886bfdda780e73ac1786/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- M+ Liga de Campeones FHD -->
+    <div class="channel-card">
+      <img src="https://raw.githubusercontent.com/davidmuma/picons_dobleM/master/icon/M%2B%20Liga%20de%20Campeones.png" alt="Liga de Campeones">
+      <h3>LIGA DE CAMPEONES FHD</h3>
+      <p>LIGA DE CAMPEONES</p>
+      <a href="http://vlc.shickat.me:8000/pid/afbf1ef8812e7b0a0977fa3a0a2d3a6d3cbd6c6f/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+    <!-- DAZN 1 FHD -->
+    <div class="channel-card">
+      <img src="https://i.ibb.co/FVzKq1y/dazn1.png" alt="DAZN 1 HD">
+      <h3>DAZN 1 FHD</h3>
+      <p>DAZN</p>
+      <a href="http://vlc.shickat.me:8000/pid/6538b79ce0da657d8455d1da6a5f342398899a0e/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- DAZN 1 FHD (II) -->
+    <div class="channel-card">
+      <img src="https://i.ibb.co/FVzKq1y/dazn1.png" alt="DAZN 1 HD">
+      <h3>DAZN 1 FHD II</h3>
+      <p>DAZN</p>
+      <a href="http://vlc.shickat.me:8000/pid/50a8a13c474848d1efbd5586efdb5b6cdd173fa9/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- DAZN F1 4K -->
+    <div class="channel-card">
+      <img src="https://i.ibb.co/2Ndmtbp/f1.png" alt="DAZN F1 HD">
+      <h3>DAZN F1 4K</h3>
+      <p>FÓRMULA 1</p>
+      <a href="http://vlc.shickat.me:8000/pid/c8ad94585fbe13cfc9074c2b5e23fb6344e0f66d/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+    <!-- EuroSport 1 FHD -->
+    <div class="channel-card">
+      <img src="https://i.ibb.co/r2Yd7xD/euro1.png" alt="Eurosport 1 HD">
+      <h3>EUROSPORT 1 FHD</h3>
+      <p>EUROSPORT</p>
+      <a href="http://vlc.shickat.me:8000/pid/bae98f69fbf867550b4f73b4eb176dae84d7f909/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+    <!-- EuroSport 2 FHD -->
+    <div class="channel-card">
+      <img src="https://i.ibb.co/M6h4Qyd/euro2.png" alt="Eurosport 2">
+      <h3>EUROSPORT 2 FHD</h3>
+      <p>EUROSPORT</p>
+      <a href="http://vlc.shickat.me:8000/pid/dc4ccb9e72550bc72be9360aa7d77e337ad11ecc/stream.mp4" target="_blank">Ver Canal</a>
+    </div>
+
+  </div> <!-- cierre container -->
+  <script>
+  const input = document.getElementById('buscador');
+  const cards = document.querySelectorAll('.channel-card');
+
+  input.addEventListener('input', () => {
+    const term = input.value.toLowerCase();
+    cards.forEach(card => {
+      const texto = card.textContent.toLowerCase();
+      const alt = card.querySelector('img').alt.toLowerCase();
+      const coincide = texto.includes(term) || alt.includes(term);
+      card.classList.toggle('hidden', !coincide);
+    });
+  });
+</script>
+</body>
+</html>
